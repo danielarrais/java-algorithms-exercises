@@ -1,6 +1,6 @@
 package maximumwords;
 
-// https://leetcode.com/problems/valid-anagram
+// https://leetcode.com/problems/maximum-number-of-words-found-in-sentences
 public class MaximumWordsOnSentencesOptimized {
     public static void main(String[] args) {
         String[] sentences = new String[]{"please wait", "continue to fight", "continue to win"};

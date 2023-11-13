@@ -10,7 +10,6 @@ public class TwoSumWithMap {
 
     public static int[] twoSum(int[] nums, int target) {
         int[] combination = new int[]{0, 0};
-        int lastValidSum = -1;
 
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {

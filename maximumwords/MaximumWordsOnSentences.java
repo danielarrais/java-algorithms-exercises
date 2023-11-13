@@ -1,6 +1,6 @@
 package maximumwords;
 
-// https://leetcode.com/problems/valid-anagram
+// https://leetcode.com/problems/maximum-number-of-words-found-in-sentences
 public class MaximumWordsOnSentences {
     public static void main(String[] args) {
 
