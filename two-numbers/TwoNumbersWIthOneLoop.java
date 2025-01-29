@@ -8,14 +8,14 @@ class Solution {
 
         int carry = 0;
 
-        // Para armazenar o ultimo resultado inserido na lista
+        // para armazenar o ultimo resultado
         ListNode lastSum = null;
 
-        // Cabeça da lista do resultado
+        // cabeça da lista do resultado
         ListNode sumHeard = null;  
 
         do {
-            int l1Val = l1Next.val;
+            int l1Val = l1Next != null ? l1Next.val : 0;
             int l2Val = l2Next != null ? l2Next.val : 0;
 
             var total = carry + l1Val + l2Val;
@@ -27,22 +27,22 @@ class Solution {
                 sumHeard = new ListNode(result);
                 lastSum = sumHeard;
             } else {
-                lastSum = addInversedNode(result, lastSum);
+                lastSum = addNode(result, lastSum);
             }
 
-            l1Next = l1Next.next;
+            l1Next = l1Next != null ? l1Next.next : null;
             l2Next = l2Next != null ? l2Next.next : null;
 
-            if(carry > 0 && l1Next == null) {
-                lastSum = addInversedNode(carry, lastSum);
+            if(carry > 0 && (l1Next == null && l2Next == null)) {
+                lastSum = addNode(carry, lastSum);
             }
 
-        } while (l1Next != null);
+        } while (l1Next != null || l2Next != null);
 
         return sumHeard;
     }
 
-    public ListNode addInversedNode(int value, ListNode lastNode) {
+    public ListNode addNode(int value, ListNode lastNode) {
         lastNode.next = new ListNode(value);
         return lastNode.next;
     }
